@@ -104,8 +104,8 @@ class Recommendation extends React.Component {
     //   console.log(results.data)
     //   // callback(listing)
     // });
-    // axios.get("http://13.56.204.195:9000/allHomes")
-    axios.get('http://localhost:9004/allHomes')
+    axios.get("http://13.56.204.195:9004/allHomes")
+    // axios.get('http://localhost:9004/allHomes')
       .then((res) => {console.log(res.data);
         this.setState({allListings: res.data})})
       .catch((err)=> console.log('error from CLIENT AXIOS ************ req', err));

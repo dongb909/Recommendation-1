@@ -3,4 +3,4 @@ import ReactDOM from 'react-dom';
 import Recommendation from './HomesRecommendation.jsx';
 
 
-ReactDOM.render(<Recommendation />, document.getElementById('app'));
+ReactDOM.render(<Recommendation />, document.getElementById('Recommendation'));

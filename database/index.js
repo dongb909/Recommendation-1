@@ -6,13 +6,14 @@ var parseString = require('xml2js').parseString;
 var connection = mysql.createConnection({   
   host     : 'localhost',
   user     : 'root',
-  password : 'password',
+  password : '',
+  // password : 'password',
   database : 'recommendations' 
 });
  
 connection.connect((err) => {
   if (err) {
-    console.error('error connecting: ', err);
+    console.error('error connecting from DATABASE index.js: ', err);
     return;
   }
  

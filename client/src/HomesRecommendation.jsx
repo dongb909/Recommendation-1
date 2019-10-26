@@ -104,7 +104,10 @@ class Recommendation extends React.Component {
     //   console.log(results.data)
     //   // callback(listing)
     // });
-    axios.get("http://localhost:9000/allHomes").then((res) => this.setState({allListings: res.data, pageListings: res.data.slice(0,3)}));
+    axios.get("/allHomes")
+      .then((res) => {console.log(res.data);
+        this.setState({allListings: res.data})})
+      .catch((err)=> console.log('error from CLIENT AXIOS ************ req', err));
  
   }
 

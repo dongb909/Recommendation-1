@@ -14,13 +14,15 @@ app.use('/listing/:id', express.static(path.join(__dirname, '/../client/dist')))
 
 
 
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 
 
 app.get("/allHomes", (req,res) => {
-  console.log('getting get req inside server function');   //get by specific id
+  // console.log('getting get req inside server function');   //get by specific id
   controller.getAllFromHomes((err,dbObj)=> {
     if (err) {
+      console.log('error from index.js SERVER******')
       res.status(500).send(err);
     } else {
       console.log('SENT All')
@@ -30,7 +32,6 @@ app.get("/allHomes", (req,res) => {
 }) 
 
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 // app.get("/currListing", (req,res) => {
 //   controller.getCurrListing((err,dbObj)=> {
 //     if (err) {

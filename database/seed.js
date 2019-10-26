@@ -33,23 +33,23 @@ const homeGenerator = () => {
 
 homeGenerator();
 
-var urlportion = "https://air6n6pictures.s3-us-west-1.amazonaws.com/"
+// var urlportion = "https://air6n6pictures.s3-us-west-1.amazonaws.com/"
 
 
-const picGenerator = () => {
-  for (var i = 0; i < 100; i++) {
+// const picGenerator = () => {
+//   for (var i = 0; i < 100; i++) {
   
-    db.query(`insert into pictures (url) values();`,  (err, results) => { 
-    if (err) {
-        console.log(err, "could not add to pictures table")
-      } else {
-        console.log('pic added')
-      }
-    });
-  }
-};
+//     db.query(`insert into pictures (url) values();`,  (err, results) => { 
+//     if (err) {
+//         console.log(err, "could not add to pictures table")
+//       } else {
+//         console.log('pic added')
+//       }
+//     });
+//   }
+// };
 
-picGenerator();
+// picGenerator();
 
 
 

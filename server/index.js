@@ -1,15 +1,19 @@
 const express = require('express');
 const path = require('path')
 const controller = require('../database/dbMethods.js');
-
+const cors = require('cors');
 const app = express()
 const port = 9000
+const bodyParser = require("body-parser");
 
 // app.get('/', (req, res) => res.send('Hello World!'))
-app.use('/listing/*', express.static(path.join(__dirname, '../client/dist')))
-app.use(express.json())
+app.use(bodyParser.json())
+app.use(cors());
+app.use('/', express.static(path.join(__dirname, '../client/dist')))
+app.use('/listing/:id', express.static(path.join(__dirname, '/../client/dist')))
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+
 
 
 
@@ -26,7 +30,7 @@ app.get("/allHomes", (req,res) => {
 }) 
 
 
-
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 // app.get("/currListing", (req,res) => {
 //   controller.getCurrListing((err,dbObj)=> {
 //     if (err) {

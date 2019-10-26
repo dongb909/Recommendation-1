@@ -81,7 +81,7 @@ const Title = styled.h2`
   padding-left:7.5px;
 
 `;
-class HomesRecommendation extends React.Component {
+class Recommendation extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -104,7 +104,7 @@ class HomesRecommendation extends React.Component {
     //   console.log(results.data)
     //   // callback(listing)
     // });
-    axios.get("/allHomes").then((res) => this.setState({allListings: res.data, pageListings: res.data.slice(0,3)}));
+    axios.get("http://localhost:9000/allHomes").then((res) => this.setState({allListings: res.data, pageListings: res.data.slice(0,3)}));
  
   }
 
@@ -162,6 +162,6 @@ class HomesRecommendation extends React.Component {
     );
   }
 }
-export default HomesRecommendation;
+export default Recommendation;
 
 // handlePopup={this.state.handlePopup}

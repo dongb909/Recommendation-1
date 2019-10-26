@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomesRecommendation from './HomesRecommendation.jsx';
+import Recommendation from './HomesRecommendation.jsx';
 
 
-ReactDOM.render(<HomesRecommendation />, document.getElementById('app'));
+ReactDOM.render(<Recommendation />, document.getElementById('app'));

@@ -10,7 +10,15 @@ var connection = mysql.createConnection({
   database : 'recommendations' 
 });
  
-connection.connect(() => console.log('DATABASE IS CONNECTING'));  
+connection.connect((err) => {
+  if (err) {
+    console.error('error connecting: ', err);
+    return;
+  }
+ 
+  console.log('DATABASE IS CONNECTING');  
+  
+})
 
 module.exports = connection; 
 

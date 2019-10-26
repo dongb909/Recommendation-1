@@ -3,14 +3,14 @@ const path = require('path')
 const controller = require('../database/dbMethods.js');
 const cors = require('cors');
 const app = express()
-const port = 9000
+const port = 9004
 const bodyParser = require("body-parser");
 
 // app.get('/', (req, res) => res.send('Hello World!'))
 app.use(bodyParser.json())
 app.use(cors());
 app.use('/', express.static(path.join(__dirname, '../client/dist')))
-app.use('/listing/:id', express.static(path.join(__dirname, '/../client/dist')))
+app.use('/air6n6/*/listing', express.static(path.join(__dirname, '/../client/dist')))
 
 
 

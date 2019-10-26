@@ -19,9 +19,9 @@ connection.connect((err) => {
   }
  
   console.log('DATABASE IS CONNECTING');  
-  
+  //
 })
-
+   
 module.exports = connection; 
 
 // var xml;

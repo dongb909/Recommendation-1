@@ -4,10 +4,9 @@ var parseString = require('xml2js').parseString;
 
 
 var connection = mysql.createConnection({   
-  // host     : '13.56.204.195',
+  host: 'localhost',
   user     : 'root',
   password : '',
-  // password : 'password',
   database : 'recommendations' 
 });
  

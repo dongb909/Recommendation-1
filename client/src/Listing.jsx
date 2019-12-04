@@ -11,6 +11,15 @@ const Wrapper = styled.span`
   color: rbg(72,72,72);
   background-color: #fff;
 `
+const ImageSlider = styled.div`
+  /* display: block;
+  width: 290px;
+  height: 200px;
+  border-radius: 3px;
+  :hover {
+    color:grey;
+  } */
+`
 const Image = styled.img`
   display: block;
   width: 290px;
@@ -121,9 +130,12 @@ function Listing (props) {
     <Wrapper>
       {/* {this.state.displayPopup ? (<Favorites handlePopup={props.handlePopup}/>) : null} */}
       <PicsCarouselWrapper>
-        <div>
+        {/* <div> */}
+        <ImageSlider>
+
           <Image src="https://s7d4.scene7.com/is/image/roomandboard/wyatt_438274_19e_g?scl=1&size=804,1000&$mobile$" ></Image>
-        </div>
+        </ImageSlider>
+        {/* </div> */}
         <Nav>
           <Bubbles></Bubbles>
           <Bubbles></Bubbles>
@@ -132,9 +144,9 @@ function Listing (props) {
           <Bubbles></Bubbles>
           <Bubbles></Bubbles>
         </Nav>
-        <InnerLeft>&#8249;</InnerLeft>
-        <InnerRight>&#8250;</InnerRight>
-        <FavsButton >&#9825; </FavsButton>
+        <InnerLeft onClick={()=> console.log('picLect')}>&#8249;</InnerLeft>
+        <InnerRight onClick={()=> console.log('picRight')}>&#8250;</InnerRight>
+        <FavsButton onClick={()=> props.handlePopup(true)}>&#9825; </FavsButton>
       </PicsCarouselWrapper>
       <TypeCity> {props.listing.homeType} • {props.listing.cityName} </TypeCity>
       <Title> {props.listing.title} </Title>

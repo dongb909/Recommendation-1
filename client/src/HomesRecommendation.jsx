@@ -8,7 +8,6 @@ const MainWrapper = styled.div`
   font-family: Helvetica Neue, sans-serif;
   position:relative;
   height: 420px;
-  /* border: 1px solid yellow; */
   // flex-direction: row;
   // flex:1;
 `;
@@ -16,9 +15,7 @@ const MainWrapper = styled.div`
 const Container = styled.div`
   width: 915px;
   height:420px;
-  /* border: 1px dashed red; */
   position: relative;
-  /* display: inline-block; */
   margin:auto;
   overflow: hidden;
   @media(max-width: 992px) {
@@ -70,18 +67,10 @@ class Recommendation extends React.Component {
     this.nextThree = this.nextThree.bind(this);
     this.prevThree = this.prevThree.bind(this);
     this.handlePopup = this.handlePopup.bind(this);
-    // this.currentThreeListings = this.currentThreeListings.bind(this);
   }
 
   componentDidMount () {
-    // let id = window.location.href.split('/')[4];
-    // axios.get("/currentListing", {params: {id:id}}).then(result => {
-    //   let listing = result.data[0];
-    //   console.log(results.data)
-    //   // callback(listing)
-    // });
     axios.get("http://localhost:9004/allHomes")
-    // axios.get('/allHomes')
       .then((res) => {console.log(res.data);
         this.setState({allListings: res.data})})
       .catch((err)=> console.log('error from CLIENT AXIOS ************ req', err));
@@ -105,25 +94,6 @@ class Recommendation extends React.Component {
     this.setState({displayPopup: boolean});
   }
 
-//   {this.state.displayTotal ? (
-//     <TotalPrice
-//       basePrice={this.state.basePrice}
-//       newPrice={this.state.newPrice}
-//     />
-//   ) : null}
-//   <ReserveButton
-//     onClick={() => {
-//       this.handleReserveClick(true);
-//     }}
-//   >
-//     Reserve
-//   </ReserveButton>
-//   <div className="notice">You won't be charged yet</div>
-// </ReservationWrapper>
-// {this.state.displayConfirmation ? (
-//   <Confirmation handleReserveClick={this.handleReserveClick} />
-// ) : null}
-// </Wrapper>
   render() {
 
     return (
@@ -141,4 +111,3 @@ class Recommendation extends React.Component {
 }
 export default Recommendation;
 
-// handlePopup={this.state.handlePopup}

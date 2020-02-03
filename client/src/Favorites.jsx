@@ -27,49 +27,6 @@ const Google = styled.button`
   background-color: red;
   color: white;
 `
-const Line1 = styled.hr` 
-
-`
-const Or = styled.p` 
-
-`
-const Line2 = styled.hr` 
-
-`
-const SignUp = styled.button` 
-
-`
-const SignInText = styled.p` 
-
-`
-const SignIn = styled.button` 
-
-`
-const ListingWrapper = styled.div` 
-
-`
-// const ImageWrapper = styled.div`
-//   display: block;
-//   width:10px;
-//   height: 5px;
-// `
-// const Image = styled.img` 
-//   height:100%;
-//   width: 100%;
-
-// `
-const Title = styled.p` 
-
-`
-const Location = styled.p` 
-
-`
-const Ratings = styled.div` 
-
-`
-const Stars = styled.div` 
-
-`
 
 function Favorites (props){
   return (
@@ -85,11 +42,6 @@ function Favorites (props){
         <SignInText> Already have an Airbnb account? </SignInText>
         <SignIn onClick={() =>window.location.href = 'https://www.airbnb.com/login'}>Sign In</SignIn>
       </Container>
-      {/* <ListingWrapper>
-        <ImageWrapper>
-          <img src="https://s7d4.scene7.com/is/image/roomandboard/wyatt_438274_19e_g?scl=1&size=804,1000&$mobile$" ></img>
-        </ImageWrapper>
-      </ListingWrapper> */}
     </Wrapper>
   );
 }

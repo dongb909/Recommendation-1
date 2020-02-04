@@ -100,7 +100,7 @@ const Bubbles = styled.button`
   margin: 0 5px;
   /* text-align:center; */
 `
-const InnerLeft = styled.button`
+const InnerPrevButton = styled.button`
   position: absolute;
   top:0;
   height: 200px;
@@ -109,7 +109,7 @@ const InnerLeft = styled.button`
   background:rgba(255,255,255,.3);
 
 `
-const InnerRight = styled.button`
+const InnerNextButton = styled.button`
   position: absolute;
   top:0;
   Right:0;
@@ -119,7 +119,7 @@ const InnerRight = styled.button`
   background:rgba(255,255,255,.3);
 
 `
-const FavsButton = styled.button`
+const FavoritesButton = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
@@ -144,9 +144,9 @@ function Listing (props) {
           <Bubbles></Bubbles>
           <Bubbles></Bubbles>
         </Nav>
-        <InnerLeft onClick={()=> console.log('picLect')}>&#8249;</InnerLeft>
-        <InnerRight onClick={()=> console.log('picRight')}>&#8250;</InnerRight>
-        <FavsButton onClick={()=> props.handlePopup(true)}>&#9825; </FavsButton>
+        <InnerPrevButton onClick={()=> console.log('picLect')}>&#8249;</InnerPrevButton>
+        <InnerNextButton onClick={()=> console.log('picRight')}>&#8250;</InnerNextButton>
+        <FavoritesButton onClick={()=> props.handlePopup(true)}>&#9825; </FavoritesButton>
       </PicsCarouselWrapper>
       <TypeCity> {props.listing.homeType} • {props.listing.cityName} </TypeCity>
       <Title> {props.listing.title} </Title>

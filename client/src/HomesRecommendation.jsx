@@ -59,13 +59,11 @@ class Recommendation extends React.Component {
     super(props);
     this.state = {
       currIndex: 0,
-      currListing: [],
       allListings: [],
-      pic1: [],
       displayPopup: false
     }
-    this.nextThree = this.nextThree.bind(this);
-    this.prevThree = this.prevThree.bind(this);
+    this.moveRight = this.moveRight.bind(this);
+    this.moveLeft = this.moveLeft.bind(this);
     this.handlePopup = this.handlePopup.bind(this);
   }
 
@@ -77,13 +75,13 @@ class Recommendation extends React.Component {
  
   }
 
-  nextThree (event) {
+  moveRight (event) {
     // event.preventDefault();
     const newIndex = this.state.currIndex+1;
     this.setState({currIndex:newIndex});
   }
 
-  prevThree (event) {
+  moveLeft (event) {
     // event.preventDefault();
     const newIndex = this.state.currIndex-1;
     this.setState({currIndex:newIndex});
@@ -98,13 +96,13 @@ class Recommendation extends React.Component {
 
     return (
       <MainWrapper>
-        <PrevButton id="outterLeftArrow" onClick={() => this.prevThree()} disabled={this.state.currIndex===0}> &#8249; </PrevButton>
+        <PrevButton id="outterLeftArrow" onClick={() => this.moveLeft()} disabled={this.state.currIndex===0}> &#8249; </PrevButton>
         <Container>
           <Title>More homes you may like</Title>
           <Listings allListings={this.state.allListings} currIndex={this.state.currIndex} handlePopup={this.handlePopup}/>
         </Container>
         {this.state.displayPopup ? (<Favorites handlePopup={this.handlePopup} />) : null}
-        <NextButton id="outterRightArrow" onClick={()=>this.nextThree()} disabled={this.state.currIndex === this.state.allListings.length-3}> &#8250; </NextButton>
+        <NextButton id="outterRightArrow" onClick={()=>this.moveRight()} disabled={this.state.currIndex === this.state.allListings.length-3}> &#8250; </NextButton>
       </MainWrapper>
     );
   }

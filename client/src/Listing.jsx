@@ -11,15 +11,6 @@ const Wrapper = styled.span`
   color: rbg(72,72,72);
   background-color: #fff;
 `
-const ImageSlider = styled.div`
-  /* display: block;
-  width: 290px;
-  height: 200px;
-  border-radius: 3px;
-  :hover {
-    color:grey;
-  } */
-`
 const Image = styled.img`
   display: block;
   width: 290px;
@@ -87,7 +78,6 @@ const Nav = styled.div`
   position: absolute;
   top:180px;
   display:flex;
-  /* justify-content:center; */
   padding: 10px 0;
   margin: 0 auto;
   left: 25%;
@@ -98,7 +88,6 @@ const Bubbles = styled.button`
   border-radius: 50%;
   background:rgba(255,255,255,.3);
   margin: 0 5px;
-  /* text-align:center; */
 `
 const InnerPrevButton = styled.button`
   position: absolute;
@@ -128,14 +117,10 @@ const FavoritesButton = styled.button`
 function Listing (props) {
   return (
     <Wrapper>
-      {/* {this.state.displayPopup ? (<Favorites handlePopup={props.handlePopup}/>) : null} */}
       <PicsCarouselWrapper>
-        {/* <div> */}
-        <ImageSlider>
-
-          <Image src="https://s7d4.scene7.com/is/image/roomandboard/wyatt_438274_19e_g?scl=1&size=804,1000&$mobile$" ></Image>
-        </ImageSlider>
-        {/* </div> */}
+        <div>
+          <Image src="https://s7d4.scene7.com/is/image/roomandboard/wyatt_438274_19e_g?scl=1&size=804,1000&$mobile$"></Image>
+        </div>
         <Nav>
           <Bubbles></Bubbles>
           <Bubbles></Bubbles>
@@ -144,9 +129,9 @@ function Listing (props) {
           <Bubbles></Bubbles>
           <Bubbles></Bubbles>
         </Nav>
-        <InnerPrevButton onClick={()=> console.log('picLect')}>&#8249;</InnerPrevButton>
-        <InnerNextButton onClick={()=> console.log('picRight')}>&#8250;</InnerNextButton>
-        <FavoritesButton onClick={()=> props.handlePopup(true)}>&#9825; </FavoritesButton>
+        <InnerPrevButton>&#8249;</InnerPrevButton>
+        <InnerNextButton >&#8250;</InnerNextButton>
+        <FavoritesButton >&#9825; </FavoritesButton>
       </PicsCarouselWrapper>
       <TypeCity> {props.listing.homeType} • {props.listing.cityName} </TypeCity>
       <Title> {props.listing.title} </Title>
@@ -155,7 +140,7 @@ function Listing (props) {
         <SpanImage>
           <Star src="https://cdn10.bigcommerce.com/s-npe4l/products/1418/images/2090/M-REC-DGRSTAR---HIGH__37390.1531409269.100.100.jpg?c=2"></Star>
         </SpanImage><Reviews> 
-        <Rating>{props.listing.rating}</Rating> ({props.listing.reviewCount}) </Reviews>
+        <Rating>{props.listing.rating}</Rating> ({props.listing.reviewCount})</Reviews>
       </DivImage>
     </Wrapper>
   )

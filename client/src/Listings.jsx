@@ -12,14 +12,12 @@ const Wrapper = styled.div`
   transition: transform 300ms;
   // border:0.2px dashed green;
 `
-// cubic-bezier(0.455, 0.03, 0.515, 0.955);
 function Listings (props) {
   return (
     <MainSlider className="inner">
       <Wrapper style={{'transform': `translateX(-${props.currIndex*(100/props.allListings.length)}%)`}}>
       {props.allListings.map(listing=> <Listing listing={listing} handlePopup={props.handlePopup} />)}
       </Wrapper>
-
     </MainSlider>
   )
 }

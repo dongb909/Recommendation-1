@@ -8,7 +8,6 @@ const Wrapper = styled.div`
   height: 500px;
   z-index: 3;
   border: 1px solid grey;
-  /* position: fixed; */
 `
 const Exit = styled.button` 
 

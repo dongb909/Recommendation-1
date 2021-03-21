@@ -68,26 +68,25 @@ class Recommendation extends React.Component {
   }
 
   componentDidMount () {
-    axios.get("http://localhost:9004/allHomes")
-      .then((res) => {console.log(res.data);
+    axios.get("http://localhost:5500/allHomes")  
+      .then((res) => {
+        console.log(res.data);
         this.setState({allListings: res.data})})
       .catch((err)=> console.log('error from CLIENT AXIOS ************ req', err));
  
   }
 
   moveRight (event) {
-    // event.preventDefault();
     const newIndex = this.state.currIndex+1;
     this.setState({currIndex:newIndex});
   }
 
   moveLeft (event) {
-    // event.preventDefault();
     const newIndex = this.state.currIndex-1;
     this.setState({currIndex:newIndex});
   }
 
-  handlePopup (boolean) {
+  handlePopup (event, boolean) {
     event.preventDefault()
     this.setState({displayPopup: boolean});
   }
